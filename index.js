@@ -1,3 +1,5 @@
+const fetch = require('node-fetch')
+
 const safeEncodeURIComponent = string => {
   let decoded = decodeURIComponent(string)
   while (string !== decoded) {
