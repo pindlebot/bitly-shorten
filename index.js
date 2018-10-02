@@ -12,8 +12,8 @@ const safeEncodeURIComponent = string => {
 module.exports = (url, { apiKey } = {}) => {
   const bitlyApiKey = apiKey || process.env.BITLY_API_KEY
   let longUrl = safeEncodeURIComponent(url)
-  let url = `https://api-ssl.bitly.com/v3/shorten?access_token=${bitlyApiKey}&longUrl=${longUrl}`
-  return fetch(url, {
+  let endpoint = `https://api-ssl.bitly.com/v3/shorten?access_token=${bitlyApiKey}&longUrl=${longUrl}`
+  return fetch(endpoint, {
     headers: {
       'Content-type': 'application/json'
     }
